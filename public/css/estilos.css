@@ -165,6 +165,18 @@ nav{
 .FormularioEdit__form p{
     margin-bottom: 5px;
 }
+/* Estilos Videos Show*/
+.video{
+    padding: 2rem 0;
+}
+.video h1{
+    font-weight: 600;
+}
+.video__cont-descripcion__ul{
+    text-decoration: none;
+    list-style: none;
+}
+
 /* ESTILOS FOOTER*/
 .footer__redes-ul{
     display: flex;

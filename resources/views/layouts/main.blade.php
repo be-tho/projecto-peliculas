@@ -25,6 +25,7 @@
                 <ul class="navbar-nav text-center ml-auto">
                     <li class="nav-item"><a class="nav-link active"  href="<?= route('home') ?>">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?= route('peliculas.index') ?>">Peliculas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= route('planes') ?>">Planes</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?= route('contacto') ?>">Contacto</a></li>
                     @auth
                         <li class="nav-item">

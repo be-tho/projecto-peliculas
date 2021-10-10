@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -11,5 +10,8 @@ class HomeController extends Controller
     }
     public function contacto(){
         return view('contacto');
+    }
+    public function planes(){
+        return view('planes');
     }
 }

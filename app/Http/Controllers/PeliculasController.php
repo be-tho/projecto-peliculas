@@ -74,6 +74,7 @@ class PeliculasController extends Controller
                 'paises' => $paises,
             ]);
     }
+
     public function edit(Request $request, $id){
         $request->validate(Pelicula::rules(), Pelicula::rulesMessages());
 
@@ -111,7 +112,6 @@ class PeliculasController extends Controller
             ->with('message_success', '<p class="text-center mb-0">La pelicula <b>' . e($pelicula->titulo). '</b> fue editada correctamente</p>');
 
     }
-
 
     public function delete($id){
         $pelicula = Pelicula::findOrFail($id);

@@ -22,6 +22,9 @@ Route::get('/',[HomeController::class, 'home'])
 Route::get('/contacto',[HomeController::class, 'contacto'])
     ->name('contacto');
 
+Route::get('/planes', [HomeController::class , 'planes'])
+    ->name('planes');
+
 /*
  |----------------------------------------------------------------------------------------
  | Autenticación

@@ -23,19 +23,20 @@
             </button>
             <div class="collapse navbar-collapse" id="barra">
                 <ul class="navbar-nav text-center ml-auto">
-                    <li class="nav-item"><a class="nav-link active"  href="<?= route('home') ?>">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= route('peliculas.index') ?>">Peliculas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= route('home') ?>">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= route('peliculas') ?>">Peliculas</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?= route('planes') ?>">Planes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= route('contacto') ?>">Contacto</a></li>
                     @auth
+                        <li class="nav-item"><a class="nav-link" href="<?= route('peliculas.panel') ?>">Panel</a></li>
                         <li class="nav-item">
                             <form action="{{route('auth.logout')}}" method="post">
                                 @csrf
-                                <button class="btn nav-link btn-dark">Cerrar Sesión ({{auth()->user()->email}})</button>
+                                <button class="btn nav-link btn-danger mx-auto">Cerrar Sesión ({{auth()->user()->email}})</button>
                             </form>
                         </li>
                     @elseguest
-                        <li class="nav-item"><a class="nav-link btn-dark" href="<?= route('auth.loginForm') ?>">Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= route('auth.loginForm') ?>">Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= route('auth.registerForm') ?>">Registrarse</a></li>
                     @endauth
                 </ul>
             </div>
@@ -50,9 +51,9 @@
             <section class="footer__redes">
                 <h4 class="col-12 text-center text-uppercase font-weight-bold pb-3">Seguinos en nuestras redes</h4>
                 <ul class="footer__redes-ul">
-                    <li class="footer__redes-ul__li"><a class="footer__btn btn-outline-light btn-floating m-1" role="button" href=""><i class='bx bxl-facebook'></i></a></li>
-                    <li class="footer__redes-ul__li"><a class="footer__btn btn-outline-light btn-floating m-1" href=""><i class='bx bxl-instagram-alt' ></i></a></li>
-                    <li class="footer__redes-ul__li"><a class="footer__btn btn-outline-light btn-floating m-1" href=""><i class='bx bxl-twitter' ></i></a></li>
+                    <li class="footer__redes-ul__li"><a class="footer__btn btn-outline-light btn-floating m-1" role="button" href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                    <li class="footer__redes-ul__li"><a class="footer__btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" target="_blank"><i class='bx bxl-instagram-alt' ></i></a></li>
+                    <li class="footer__redes-ul__li"><a class="footer__btn btn-outline-light btn-floating m-1" href="https://twitter.com/?lang=es" target="_blank"><i class='bx bxl-twitter' ></i></a></li>
                 </ul>
             </section>
         </div>

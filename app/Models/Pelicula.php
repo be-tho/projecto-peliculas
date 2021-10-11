@@ -72,7 +72,12 @@ class Pelicula extends Model
      | Relaciones
      |-------------------------------------------------------------------------------
     */
-    public function pais(){
+    public function pais()
+    {
         return $this->belongsTo(Pais::class, 'pais_fk', 'pais_id');
+    }
+    public function generos()
+    {
+        return $this->belongsToMany(Genero::class, 'peliculas_tienen_generos', 'pelicula_id', 'genero_id', 'pelicula_id', 'genero_id');
     }
 }

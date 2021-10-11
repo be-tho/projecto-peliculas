@@ -16,9 +16,7 @@ class AddPaisIdColumnToPeliculasTable extends Migration
         Schema::table('peliculas', function (Blueprint $table) {
             $table->unsignedSmallInteger('pais_fk')->after('pelicula_id');
 
-            //Definimos la FK
             $table->foreign('pais_fk')->references('pais_id')->on('paises');
-
         });
     }
 

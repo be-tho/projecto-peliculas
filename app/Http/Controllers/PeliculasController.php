@@ -2,19 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genero;
 use App\Models\Pais;
 use App\Models\Pelicula;
 use Illuminate\Http\Request;
 
 class PeliculasController extends Controller
 {
-    public function index(){
+    public function videos(){
+        $peliculas = Pelicula::with(['pais', 'generos'])->get();
+        return view('peliculas.videos', ['peliculas' => $peliculas,]);
+
+    }
+
+
+    public function panel(){
         //traemos todos los registros de la tabla a través del modelo Pelicula
 
 //        $peliculas = Pelicula::all();
-        $peliculas = Pelicula::with('pais')->get();
+        $peliculas = Pelicula::with(['pais', 'generos'])->get();
 
-        return view('peliculas.index', ['peliculas' => $peliculas,]);
+        return view('peliculas.panel', ['peliculas' => $peliculas,]);
     }
 
     public function show($id){
@@ -28,8 +36,10 @@ class PeliculasController extends Controller
 
     public function createForm(){
         $paises = Pais::all();
+        $generos = Genero::all();
         return view('peliculas.form-create', [
             'paises' => $paises,
+            'generos' => $generos,
         ]);
     }
 
@@ -59,10 +69,12 @@ class PeliculasController extends Controller
 
         $pelicula = Pelicula::create($input);
 
-//        User::create($input);
+        $generosId = $request->input('genero_id') ?? []; // Capturamos los géneros, o definimos un array vacío.
+        $pelicula->generos()->attach($generosId);
+
 
         return redirect()
-            ->route('peliculas.index')
+            ->route('peliculas.panel')
             ->with('message_success', '<p class="text-center mb-0">La pelicula <b>' . e($pelicula->titulo). '</b> fue creada correctamente.</p>');
     }
 
@@ -108,15 +120,19 @@ class PeliculasController extends Controller
         }
 
         return redirect()
-            ->route('peliculas.index')
+            ->route('peliculas.panel')
             ->with('message_success', '<p class="text-center mb-0">La pelicula <b>' . e($pelicula->titulo). '</b> fue editada correctamente</p>');
 
     }
 
-    public function delete($id){
+    public function delete($id): \Illuminate\Http\RedirectResponse
+    {
         $pelicula = Pelicula::findOrFail($id);
+
+        $pelicula->generos()->detach();
+
         $pelicula->delete();
-        return redirect()->route('peliculas.index')
+        return redirect()->route('peliculas.panel')
             ->with('message_success', '<p class="text-center mb-0">La pelicula ' . e($pelicula->titulo) . ' fue eliminada correctamente </p>');
     }
 }

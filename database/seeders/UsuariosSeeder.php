@@ -19,7 +19,7 @@ class UsuariosSeeder extends Seeder
             [
                 'usuarios_id' => 1,
                 'email' => 'beto@gmail.com',
-                'password' => Hash::make('asd123'),
+                'password' => Hash::make('123456789'),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]

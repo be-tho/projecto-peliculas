@@ -1,0 +1,13 @@
+Datos
+
+Carrera: Diseño y Desarrollo web
+Materia : Portales y Comercio Electrónico
+Cuatrimestre: 4to
+Año: 2021
+Turno: tarde
+Comisión: dwt4a
+Apellido y Nombre : Albert Villarroel
+Docente: Santiago Gallino (Un crack!)
+Carácter de entrega: 1er parcial
+
+

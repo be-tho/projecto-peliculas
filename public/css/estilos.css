@@ -21,6 +21,15 @@ aside{
     margin-right: -15px;
     margin-left: -15px;
 }
+legend{
+    width: auto !important;
+    margin-bottom: 0;
+}
+fieldset{
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 0.5rem 1.5rem;
+}
 #logo {
     color: var(--primario);
     font-size: 2rem;
@@ -40,6 +49,10 @@ nav{
 }
 .navbar-nav{
     gap: 0 1.5rem;
+}
+.btn-danger{
+    background: var(--primario);
+    color: white !important;
 }
 
 /* Estilos de ultimos bloque de  videos */
@@ -155,6 +168,40 @@ nav{
     padding: 2rem 0;
     background: #f7f7f7;
 }
+
+/* ESTILO LOGIN */
+.login{
+    padding: 2.5rem 1rem;
+}
+.login__cont{
+    margin: 0 auto;
+    background-image: radial-gradient(circle, #2a2b34, #252730, #21222d, #1c1e29, #181a26);
+    padding: 2rem;
+    color: white;
+    border-radius: 20px;
+}
+.login__titulo{
+    text-align: center;
+}
+.login__titulo h1{
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+}
+.btn-login{
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: #e12c2c;
+    border-color: #8a1c1c;
+}
+.btn-login:hover{
+    background-color: #8a1c1c;
+    border-color: #e12c2c;
+}
+
+
+
 /* Formulario editar */
 .FormularioEdit {
     background: #fbfbfb;
@@ -165,9 +212,29 @@ nav{
 .FormularioEdit__form p{
     margin-bottom: 5px;
 }
+.generos__label{
+    background: #181a26;
+    border-radius: 5px;
+    padding: 0.3rem 0.8rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
 /* Estilos Videos Show*/
 .video{
     padding: 2rem 0;
+    justify-content: center;
+    align-items: center;
+}
+.video__titulo{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.video__cont-img > img{
+    border-radius: 15px;
+    box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+    -webkit-box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+    -moz-box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
 }
 .video h1{
     font-weight: 600;
@@ -175,8 +242,136 @@ nav{
 .video__cont-descripcion__ul{
     text-decoration: none;
     list-style: none;
+    gap: 10px;
 }
 
+
+/* Estilos videos*/
+.peliculas__titulo h1{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.peliculas__cont-img{
+    border-radius: 15px 15px 0 0;
+    width: 100% !important;
+
+    box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+    -webkit-box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+    -moz-box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+}
+.peliculas__cont{
+}
+.peliculas__cont a{
+    text-decoration: none;
+    list-style: none;
+    color: var(--back-azul);
+}
+.peliculas__cont p{
+    margin-bottom: 0;
+}
+.peliculas__cont h4{
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+.peliculas__cont-figure{
+    margin-bottom: 0;
+}
+.peliculas__cont-texto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    background: var(--back-azul);
+    color: white;
+    padding: 1rem;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+    -webkit-box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+    -moz-box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+}
+/* ESTILO PLANES */
+.titulo__planes h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #343a40;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+.titulo__planes p{
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.planes__titulo{
+    color: white;
+    margin: -1rem -1rem 0 -1rem;
+    border-radius: 15px 15px 0 0;
+    padding: 0.5rem;
+    text-align: center;
+}
+.red{
+    background: var(--red);
+}
+.indigo{
+    background: var(--indigo);
+}
+.blue{
+    background: var(--facebook);
+}
+.correcto{
+    color: #228e42;
+}
+.cancelado{
+    color: red;
+}
+.planes__titulo h2{
+    font-weight: 600;
+}
+.planes{
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 0.3rem;
+}
+.planes__article{
+    cursor: pointer;
+    /*border: 1px solid var(--back-azul);*/
+    border-radius: 15px;
+    box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+    -webkit-box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+    -moz-box-shadow: 1px 1px 6px 0 rgba(26,26,26,0.9);
+    padding: 1rem;
+}
+.planes__article-precio{
+    padding-top: 1rem;
+}
+.planes__article-precio p:first-child{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    color: #343a40;
+}
+/* ESTILOS DE CREAR PELICULA*/
+.formCreate{
+    padding:1rem 1.5rem;
+    background: #fbfbfb;
+}
+.formCreate__cont-h1 h1{
+    font-weight: 700;
+    color: #343A40;
+}
+
+/* ESTILOS PANEL*/
+
+.panel__titulo h1{
+    font-weight: 600;
+    color: #343a40;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
 /* ESTILOS FOOTER*/
 .footer__redes-ul{
     display: flex;
@@ -257,5 +452,42 @@ nav{
         height: calc(100vh - 56px);
     }
 
-
+}
+@media (max-width: 767px){
+    .table{
+        border: none;
+    }
+    .table thead{
+        display: none;
+    }
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+    .table tr{
+        margin-bottom: 1.5rem;
+    }
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .table td:before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: left;
+    }
+    .acciones{
+        display: flex;
+        gap: 0.5rem;
+        justify-content: end;
+    }
+    .acciones a, .acciones form{
+        width: 60px;
+    }
 }

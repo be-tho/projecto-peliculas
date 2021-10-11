@@ -19,9 +19,6 @@ use App\Http\Controllers\PeliculasController;
 Route::get('/',[HomeController::class, 'home'])
     ->name('home');
 
-Route::get('/contacto',[HomeController::class, 'contacto'])
-    ->name('contacto');
-
 Route::get('/planes', [HomeController::class , 'planes'])
     ->name('planes');
 
@@ -36,12 +33,29 @@ Route::get('iniciar-sesion', [AuthController::class, 'loginForm'])
 Route::post('iniciar-sesion', [AuthController::class, 'login'])
     ->name('auth.login');
 
+Route::get('crear-usuario', [AuthController::class, 'registerForm'])
+    ->name('auth.registerForm');
+
+Route::post('crear-usuario', [AuthController::class, 'create'])
+    ->name('auth.create');
+
+
+
 Route::post('cerrar-sesion', [AuthController::class, 'logout'])
     ->name('auth.logout');
 
 
-Route::get('peliculas', [PeliculasController::class, 'index'])
-    ->name('peliculas.index');
+
+/*
+ |----------------------------------------------------------------------------------------
+ | Peliculas
+ |-------------------------------------------------------------------------------------------
+ */
+Route::get('/peliculas', [PeliculasController::class, 'videos'])
+    ->name('peliculas');
+
+Route::get('peliculas/panel', [PeliculasController::class, 'panel'])
+    ->name('peliculas.panel');
 
 Route::get('peliculas/nueva', [PeliculasController::class, 'createForm'])
     ->name('peliculas.createForm')

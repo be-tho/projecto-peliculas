@@ -35,7 +35,7 @@
                     <td data-label="Portada"><img class="img-tabla" src="{{ url('imgs/' . $pelicula->poster) }}" alt="{{$pelicula->poster_descripcion}}"></td>
                     <td data-label="Título">{{ $pelicula->titulo }}</td>
                     <td data-label="País">{{ $pelicula->pais->nombre }}</td>
-                    <td data-label="G   enero">
+                    <td data-label="Genero">
                         @if( $pelicula->generos()->count() > 0)
                             @foreach($pelicula->generos as $genero)
                                 <span class="badge bg-success text-light p-1">{{$genero->nombre}}</span>
